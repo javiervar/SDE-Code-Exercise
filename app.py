@@ -78,14 +78,18 @@ def topSecretAlgoritm(destinationArry, driverArr):
 
 
 def main():
-    destination_path = sys.argv[1]
-    drivers_path = sys.argv[2]
-    destination_array = fileToArray(destination_path)
-    drivers_array = fileToArray(drivers_path)
-    data = topSecretAlgoritm(destination_array, drivers_array)
+    try:
+        destination_path = sys.argv[1]
+        drivers_path = sys.argv[2]
+        destination_array = fileToArray(destination_path)
+        drivers_array = fileToArray(drivers_path)
+        data = topSecretAlgoritm(destination_array, drivers_array)
 
-    table = pd.DataFrame(data)
-    print(table)
+        table = pd.DataFrame(data)
+        print(table)
+    except Exception as e:
+        print(
+            "An error occurred please check that you have entered the file paths correctly")
 
 
 if __name__ == "__main__":
